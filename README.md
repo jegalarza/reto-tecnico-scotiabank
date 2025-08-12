@@ -76,18 +76,21 @@ git clone https://github.com/jegalarza/reto-tecnico-scotiabank.git
 
 ## Consumo de las APIs
 - **Inicio de sesion (POST -> http://localhost:8080/api/v1/auth/login)**
+```
 - El cual puede ser admin o user tanto para username y password. Dicho endpoint generara un TOKEN.
 - Tiene las siguientes restricciones: ADMIN → Acceso a todos los endpoints (listar y crear) | USER → Solo puede acceder a los endpoints de lectura (listar).
 {
   "username": "admin",
   "password": "admin"
 }
-
+```
 - **Listar alumnos (GET -> http://localhost:8080/api/v1/alumnos)**
+```
 - Se debera ingresar el token generado por el login.
 - Dicho endpoint mostrara la lista de alumnos activos que existen.
-  
+```
 - **Agregar alumnos (POST -> http://localhost:8080/api/v1/alumnos)**
+```
 - Se debera ingresar el token generado por el login, adicionalmente un request de alumno.
 - Dicho endpoint mostrara alertas si en caso se ingresa mal un dato, si en caso se genera correctamente mostrara un estado HTTP 201.
 {
@@ -96,4 +99,5 @@ git clone https://github.com/jegalarza/reto-tecnico-scotiabank.git
   "estado": "activo",
   "edad": 22
 }
+```
 
