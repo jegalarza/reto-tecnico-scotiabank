@@ -65,8 +65,8 @@ logging.level.org.springframework.r2dbc.core=DEBUG
 git clone https://github.com/jegalarza/reto-tecnico-scotiabank.git
 
 ## Compilar y ejecutar
-mvn clean package
-mvn spring-boot:run
+- mvn clean package
+- mvn spring-boot:run
 
 ## Despliegue en docker
 - **docker build -t alumnos-app .**
