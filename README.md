@@ -36,8 +36,10 @@ src/
 │ ├─ service/ # Interface de negocio
 │ ├─ serviceImpl/ # Lógica de negocio
 │ ├─ repository/ # Interfaces R2DBC
-│ ├─ util/ # Constantes
+│ ├─ util/ # Clases utilitarias para tareas comunes.
+│ ├─ security/ #Configuración y componentes para seguridad con JWT.
 │ └─ model/ # Entidades
+│ └─ model/dto # Clases del request y response
 └─ test/java/com/scotiabank
 ├─ repository/ # Tests de repositorio
 ├─ serviceImpl/ # Tests de servicio
@@ -71,4 +73,27 @@ git clone https://github.com/jegalarza/reto-tecnico-scotiabank.git
 ## Despliegue en docker
 - **docker build -t alumnos-app .**
 - **docker compose up --build**
+
+## Consumo de las APIs
+- **Inicio de sesion (POST -> http://localhost:8080/api/v1/auth/login)**
+- El cual puede ser admin o user tanto para username y password. Dicho endpoint generara un TOKEN.
+- Tiene las siguientes restricciones: ADMIN → Acceso a todos los endpoints (listar y crear) | USER → Solo puede acceder a los endpoints de lectura (listar).
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+- **Listar alumnos (GET -> http://localhost:8080/api/v1/alumnos)**
+- Se debera ingresar el token generado por el login.
+- Dicho endpoint mostrara la lista de alumnos activos que existen.
+  
+- **Agregar alumnos (POST -> http://localhost:8080/api/v1/alumnos)**
+- Se debera ingresar el token generado por el login, adicionalmente un request de alumno.
+- Dicho endpoint mostrara alertas si en caso se ingresa mal un dato, si en caso se genera correctamente mostrara un estado HTTP 201.
+{
+  "nombre": "Pedro",
+  "apellido": "Ramírez",
+  "estado": "activo",
+  "edad": 22
+}
 
