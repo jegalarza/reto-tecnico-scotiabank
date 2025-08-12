@@ -5,7 +5,7 @@ Incluye persistencia en **H2 en memoria**, pruebas unitarias y configuración pa
 
 ---
 
-## 📜 Características
+## Características
 - API 100% reactiva con **WebFlux**
 - Persistencia usando **R2DBC** (H2 en memoria)
 - Endpoints para CRUD de alumnos
@@ -16,7 +16,7 @@ Incluye persistencia en **H2 en memoria**, pruebas unitarias y configuración pa
 
 ---
 
-## 🛠 Tecnologías
+## Tecnologías
 - **Java 17**
 - **Spring Boot 3.5.4**
 - **Spring WebFlux**
@@ -28,7 +28,7 @@ Incluye persistencia en **H2 en memoria**, pruebas unitarias y configuración pa
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 src/
 ├─ main/java/com/scotiabank
 │ ├─ controller/ # Controladores REST
@@ -43,7 +43,7 @@ src/
 
 ---
 
-## ⚙ Configuración
+## Configuración
 El proyecto usa **H2 en memoria**, por lo que no requiere instalar ninguna base de datos externa.  
 El archivo `application.properties` contiene la configuración básica:
 
@@ -56,5 +56,17 @@ spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
 
 logging.level.org.springframework.r2dbc.core=DEBUG
+```
 
+## Clonar el repositorio
+git clone https://github.com/TU_USUARIO/TU_REPO.git
+cd TU_REPO
+
+## Compilar y ejecutar
+mvn clean package
+mvn spring-boot:run
+
+## Despliegue en docker
+- **docker build -t alumnos-app .**
+- **docker compose up --build**
 
