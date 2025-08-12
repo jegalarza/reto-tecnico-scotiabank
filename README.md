@@ -8,8 +8,8 @@ Incluye persistencia en **H2 en memoria**, pruebas unitarias y configuración pa
 ## Características
 - API 100% reactiva con **WebFlux**
 - Persistencia usando **R2DBC** (H2 en memoria)
-- Endpoints para CRUD de alumnos
-- Búsqueda por estado con `findByEstadoIgnoreCase`
+- Endpoints para listar y crear alumnos
+- El listado de alumnos es por estado con `findByEstadoIgnoreCase`
 - Manejo de errores y validaciones
 - Tests para repositorio, servicio y controlador
 - Listo para ejecutar en **Docker**
@@ -29,6 +29,7 @@ Incluye persistencia en **H2 en memoria**, pruebas unitarias y configuración pa
 ---
 
 ## Estructura del Proyecto
+```
 src/
 ├─ main/java/com/scotiabank
 │ ├─ controller/ # Controladores REST
@@ -39,7 +40,7 @@ src/
 ├─ repository/ # Tests de repositorio
 ├─ service/ # Tests de servicio
 └─ controller/ # Tests de controlador
-
+```
 
 ---
 
