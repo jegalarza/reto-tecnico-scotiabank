@@ -59,7 +59,7 @@ logging.level.org.springframework.r2dbc.core=DEBUG
 ```
 
 ## Clonar el repositorio
-git clone https://github.com/TU_USUARIO/TU_REPO.git
+git clone https://github.com/jegalarza/reto-tecnico-scotiabank.git
 cd TU_REPO
 
 ## Compilar y ejecutar
