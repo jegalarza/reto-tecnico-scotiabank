@@ -8,7 +8,7 @@ Incluye persistencia en **H2 en memoria**, pruebas unitarias y configuración pa
 ## Características
 - API 100% reactiva con **WebFlux**
 - Persistencia usando **R2DBC** (H2 en memoria)
-- Endpoints para listar y crear alumnos
+- Endpoints para login por rol (ADMIN y USER), listar alumnos y crear alumnos
 - El listado de alumnos es por estado con `findByEstadoIgnoreCase`
 - Manejo de errores y validaciones
 - Tests para repositorio, servicio y controlador
@@ -53,6 +53,12 @@ El proyecto usa **H2 en memoria**, por lo que no requiere instalar ninguna base 
 El archivo `application.properties` contiene la configuración básica:
 
 ```properties
+spring.application.name=reto-tecnico-scotiabank
+
+server.port=8080
+
+jwt.secret=LZgJqD4W4YQZpV9V7C6x0m2BfC2fFjzjzXo2u1Q1sEo=
+
 spring.r2dbc.url=r2dbc:h2:mem:///testdb;DB_CLOSE_DELAY=-1;MODE=MYSQL
 spring.r2dbc.username=sa
 spring.r2dbc.password=
@@ -77,7 +83,7 @@ git clone https://github.com/jegalarza/reto-tecnico-scotiabank.git
 ## Consumo de las APIs
 - **Inicio de sesion (POST -> http://localhost:8080/api/v1/auth/login)**
 ```
-- El cual puede ser admin o user tanto para username y password. Dicho endpoint generara un TOKEN.
+- El cual puede ser 'ADMIN' o 'USER0 tanto para username y password. Dicho endpoint generara un TOKEN.
 - Tiene las siguientes restricciones: ADMIN → Acceso a todos los endpoints (listar y crear) | USER → Solo puede acceder a los endpoints de lectura (listar).
 {
   "username": "admin",
