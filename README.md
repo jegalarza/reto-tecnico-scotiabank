@@ -33,12 +33,14 @@ Incluye persistencia en **H2 en memoria**, pruebas unitarias y configuración pa
 src/
 ├─ main/java/com/scotiabank
 │ ├─ controller/ # Controladores REST
-│ ├─ service/ # Lógica de negocio
+│ ├─ service/ # Interface de negocio
+│ ├─ serviceImpl/ # Lógica de negocio
 │ ├─ repository/ # Interfaces R2DBC
+│ ├─ util/ # Constantes
 │ └─ model/ # Entidades
 └─ test/java/com/scotiabank
 ├─ repository/ # Tests de repositorio
-├─ service/ # Tests de servicio
+├─ serviceImpl/ # Tests de servicio
 └─ controller/ # Tests de controlador
 ```
 
