@@ -37,7 +37,7 @@ public class AlumnoController {
 	@PostMapping
 	public Mono<ResponseEntity<Object>> crear(@RequestBody Alumno alumno) {
 	    return alumnoService.guardar(alumno)
-	            .then(Mono.just(ResponseEntity.status(201).build())) // 201 vacío
+	            .then(Mono.just(ResponseEntity.status(201).build()))
 	            .onErrorResume(e -> {
 	                if (e instanceof IllegalArgumentException) {
 	                    return Mono.just(ResponseEntity.badRequest().body(e.getMessage()));
